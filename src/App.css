@@ -1,21 +1,31 @@
-#root {
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 0.8);
+/*Type Selectors*/
+textarea{
+  resize: none;
 }
 
+input{
+  background-color: white;
+}
+/*Class Styling*/
 .main-container{
   display: flex;
   flex-direction: row;
   width: 100vw;
   height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 
 .cv-details{
   background-color: #2A4494;
-  padding: 15px;
+  padding: 10px;
   color: white;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.cv-details h1{
+  text-align: center;
 }
 
 .cv-preview h1{
@@ -24,35 +34,48 @@
 }
 
 .cv-details, .cv-preview{
-  width: 50%;
   display: flex;
   flex-direction: column;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.cv-details{
+  width: 60%;
 }
 
 .cv-preview{
   padding: 10px;
+  width: 40%;
 }
 
-.general-info, .educational-experience, .practical-experience{
+
+
+.general-info, .educational-experience, .job-experience{
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  width: 100%;
 }
 
-.general-form{
+.general-form, .education-form, .job-form{
   background-color: white;
   color: #122C34;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   width: 100%;
   border-radius: 10px;
-  padding: 15px;
-  
+  padding: 10px;
 }
 
-.general-form > input{
+.job-info, .educational-info, .general-info{
+  width: 90%;
+}
+
+
+.general-form > input, .education-form > input, .job-form > input, .job-form textarea{
   background-color: white;
   border-radius: 5px;
   padding: 7px;
@@ -61,15 +84,52 @@
 
 .title{
   font-size: 2em;
+  text-align: center;
 }
 
 .disabled{
   display: none;
 }
 
+.warning{
+  color: red;
+  font-size: 1.5em;
+}
+
+.date-section{
+  display: flex;
+  flex-direction: column;
+  padding: 15px 2px;
+  gap: 15px;
+}
+
+.date{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.date.disabled{
+  display: none;
+}
+
+.date > input{
+  background-color: #2A4494;
+}
 
 /*ID Styling*/
 #submit-form{
   background-color: #2A4494;
   color: white;
+}
+
+#qualifications{
+  background-color: white;
+  border: 2px solid #122C34;
+  color: #122C34;
+}
+
+#root {
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
 }
